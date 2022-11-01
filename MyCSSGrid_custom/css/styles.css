@@ -1,0 +1,86 @@
+/* 変数定義 */
+:root {
+	--vw: 1vw;
+	--col: 5;
+	--gap: 1;
+	--width: calc((100 - (var(--col) + 1) * var(--gap)) / var(--col) * var(--vw));
+}
+@media screen and (max-width: 960px) {
+	:root {
+		--col: 3;
+		--gap: 1.5;
+	}
+}
+@media screen and (max-width: 520px) {
+	:root {
+		--col: 2;
+		--gap: 2;
+	}
+}
+
+/* 初期設定 */
+* {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background: #000;
+}
+
+/* パネル */
+.container {
+	display: grid;
+	grid-template-columns: repeat(var(--col), var(--width));
+	grid-auto-rows: var(--width);
+	grid-auto-flow: dense;
+	grid-gap: calc(var(--vw) * var(--gap));
+	justify-content: space-between;
+	margin: calc(var(--vw) * var(--gap));
+}
+
+.container > * {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+
+	padding: calc(var(--vw) * 2);
+
+	background-color: rgba(0,0,0,0.4);
+	background-position: center;
+	background-size: cover;
+	background-blend-mode: darken;
+
+	border-radius: 5px;
+
+	/* フェードイン設定 */
+	opacity: 0;
+	visibility: hidden;
+
+	transition: background-color 1s, opacity 1s, visibility 1s;
+}
+
+/* オンマウス */
+.container > *:hover {
+	background-color: rgba(0,0,0,0);
+}
+
+
+/* フェードイン設定 */
+.container > .is-fadein {
+  opacity: 1;
+  visibility: visible;
+}
+
+.container > .topics {
+	grid-column: span 2;
+}
+
+.container .title {
+	font-size: 1.5rem;
+}

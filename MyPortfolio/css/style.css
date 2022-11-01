@@ -1,0 +1,121 @@
+/* =============== Material Icons =============== */
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+/* =============== /Material Icons =============== */
+
+/* common */
+body {
+	margin: 0;
+}
+
+img {
+	vertical-align: bottom;
+}
+
+h1, h2, p {
+	font-weight: normal;
+	margin: 0;
+}
+
+.container {
+	width: 400px;
+	margin: 0 auto;
+}
+
+/* header */
+header {
+	background: #efefef;
+}
+
+header .container {
+	padding: 32px 0;
+	display: flex;
+	align-items: center;
+}
+
+header .container div + div {
+	margin-left: 32px;
+}
+
+header h1 {
+	font-size: 24px;
+}
+
+header ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+header ul li + li {
+	margin-left: 4px;
+}
+
+header ul a {
+	color: hsl(200, 100%, 45%);
+}
+
+header .icon {
+	border-radius: 50%;
+}
+
+/* main */
+main h1 {
+	font-size: 24px;
+	text-align: center;
+	padding: 60px 0;
+}
+
+main h2 {
+	font-size: 20px;
+	margin-top: 16px;
+}
+
+main p {
+	line-height: 1.8;
+	margin-top: 16px;
+}
+
+main section + section {
+	margin-top: 60px;
+}
+
+/* footer */
+footer {
+	padding: 60px;
+	text-align: center;
+	color: #aaa;
+}
+
+/* animation */
+.animate {
+	opacity: 0;
+	transition: opacity .3s, transform .3s;
+}
+
+.animate:nth-child(odd) {
+	transform: translateX(-40px);
+}
+
+.animate:nth-child(even) {
+	transform: translateX(40px);
+}
+
+.animate.appear {
+	opacity: 1;
+	transform: none;
+}
